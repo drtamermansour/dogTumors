@@ -1,0 +1,12 @@
+[[annotation]]
+file="refGenome/ref_CanFam3.1_top_level_mapped.bed.gz"
+columns = [4]
+names=["transName"]
+ops=["concat"]
+
+[[annotation]]
+file="refGenome/ref_CanFam3.1_top_level_mapped_genes.bed.gz"
+columns = [4]
+names=["geneName"]
+ops=["uniq"]
+#
