@@ -13,7 +13,13 @@ cp -R Tamer/dogTumors/data/dedup Tamer2/dogTumors/data/.
 mkdir Tamer2/dogTumors/knowVar
 cp -R Tamer/dogTumors/knowVar/canis_familiaris*.vcf Tamer2/dogTumors/knowVar/.
 cp -R Tamer/dogTumors/knowVar/canis_familiaris*.vcf.idx Tamer2/dogTumors/knowVar/.
-cp -R Tamer/dogTumors/data/recalib Tamer2/dogTumors/data/.
+for dir in Tamer/dogTumors/data/recalib/*;do 
+ newdir=$(echo $dir | sed 's/Tamer/Tamer2/');
+ mkdir -p $newdir;
+ cp -R $dir/*.txt $newdir/.
+ cp -R $dir/*.bam $newdir/.
+ cp -R $dir/*.bai $newdir/.
+done
 cp -R Tamer/dogTumors/data/PON Tamer2/dogTumors/data/.
 cp -R Tamer/dogTumors/data/PON.vcf.gz Tamer2/dogTumors/data/.
 cp -R Tamer/dogTumors/data/rawVC Tamer2/dogTumors/data/.
